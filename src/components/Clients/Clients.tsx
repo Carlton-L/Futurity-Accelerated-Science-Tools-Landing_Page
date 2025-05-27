@@ -10,15 +10,17 @@ const Clients = () => {
   return (
     <Flex
       maxWidth='1460px'
-      padding='8px'
+      px='8px'
+      py='32px'
       justifyContent='center'
       alignItems='center'
       pointerEvents='auto'
       direction='column'
       gap='16px'
+      md={{ gap: '32px' }}
     >
       <Tag>Our Clients</Tag>
-      <Heading size='2xl'>
+      <Heading size='2xl' md={{ fontSize: '48px' }}>
         Who We <Emphasis>Work With</Emphasis>
       </Heading>
       <Text>
@@ -55,27 +57,49 @@ const Clients = () => {
           h='100%'
           overflow='hidden'
           m='2px' // This creates the border effect
+          md={{ padding: '32px' }}
         >
           <Card.Body>
-            <Card.Header display='inline'>
+            <Card.Header
+              display='inline'
+              md={{ fontSize: '48px', marginY: '32px' }}
+              my='16px'
+            >
               Client <Emphasis>Success</Emphasis>
             </Card.Header>
-            <Card.Description display='inline'>
+            <Card.Description
+              display='inline'
+              fontSize='32px'
+              textAlign='center'
+              md={{
+                fontSize: '64px',
+                textAlign: 'left',
+                marginLeft: '32px',
+                maxWidth: '100%',
+              }}
+              color='#A7ACB2'
+              fontFamily='TT Norms Pro Normal'
+              maxWidth='540px'
+            >
               "You Saved us <Emphasis>150 Million</Emphasis>"
             </Card.Description>
-            <Card.Footer>- Top 5 Global Pharma Company</Card.Footer>
+            <Card.Footer ml='auto'>- Top 5 Global Pharma Company</Card.Footer>
           </Card.Body>
         </Card.Root>
       </Box>
-      <Flex direction='column' gap='8px' md={{ gap: '16px' }}>
+      <Flex
+        direction='column'
+        gap='8px'
+        md={{ gap: '16px', flexDirection: 'row' }}
+      >
         <Flex
           gap='8px'
           direction='column'
           md={{ gap: '16px', flexDirection: 'row' }}
         >
           {/* Enterprises */}
-          <Card.Root>
-            <Card.Body gap='8px'>
+          <Card.Root md={{ paddingY: '32px' }}>
+            <Card.Body gap='8px' md={{ gap: '16px', paddingY: '0' }}>
               <Card.Header>
                 <Flex
                   w='100%'
@@ -84,6 +108,8 @@ const Clients = () => {
                   alignItems='center'
                   gap='8px'
                   textAlign='center'
+                  fontSize='24px'
+                  lg={{ fontSize: '32px' }}
                 >
                   <svg width='0' height='0'>
                     <linearGradient
@@ -114,8 +140,8 @@ const Clients = () => {
             </Card.Body>
           </Card.Root>
           {/* Govt */}
-          <Card.Root>
-            <Card.Body gap='8px'>
+          <Card.Root md={{ paddingY: '32px' }}>
+            <Card.Body gap='8px' md={{ gap: '16px', paddingY: '0' }}>
               <Card.Header>
                 {' '}
                 <Flex
@@ -125,6 +151,8 @@ const Clients = () => {
                   alignItems='center'
                   gap='8px'
                   textAlign='center'
+                  fontSize='24px'
+                  lg={{ fontSize: '32px' }}
                 >
                   <svg width='0' height='0'>
                     <linearGradient
@@ -161,8 +189,8 @@ const Clients = () => {
           md={{ gap: '16px', flexDirection: 'row' }}
         >
           {/* R&D */}
-          <Card.Root>
-            <Card.Body gap='8px'>
+          <Card.Root md={{ paddingY: '32px' }}>
+            <Card.Body gap='8px' md={{ gap: '16px', paddingY: '0' }}>
               <Card.Header>
                 {' '}
                 <Flex
@@ -172,6 +200,8 @@ const Clients = () => {
                   alignItems='center'
                   gap='8px'
                   textAlign='center'
+                  fontSize='24px'
+                  lg={{ fontSize: '32px' }}
                 >
                   <svg width='0' height='0'>
                     <linearGradient
@@ -202,8 +232,8 @@ const Clients = () => {
             </Card.Body>
           </Card.Root>
           {/* INVENT */}
-          <Card.Root>
-            <Card.Body gap='8px'>
+          <Card.Root md={{ paddingY: '32px' }}>
+            <Card.Body gap='8px' md={{ gap: '16px', paddingY: '0' }}>
               <Card.Header>
                 {' '}
                 <Flex
@@ -213,6 +243,8 @@ const Clients = () => {
                   alignItems='center'
                   gap='8px'
                   textAlign='center'
+                  fontSize='24px'
+                  lg={{ fontSize: '32px' }}
                 >
                   <svg width='0' height='0'>
                     <linearGradient

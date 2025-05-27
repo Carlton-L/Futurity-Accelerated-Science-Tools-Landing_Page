@@ -7,7 +7,8 @@ const About = () => {
   return (
     <Flex
       maxWidth='1460px'
-      padding='8px'
+      px='8px'
+      py='32px'
       justifyContent='center'
       // alignItems='center'
       pointerEvents='none'
