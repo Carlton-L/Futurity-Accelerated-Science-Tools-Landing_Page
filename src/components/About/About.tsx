@@ -1,17 +1,25 @@
 import { Box, Card, Flex, Icon } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
 import Emphasis from '../Emphasis';
 import Tag from '../Tag';
 import screenshotImg from '../../assets/screenshot.png';
 import Button from '../Button';
 
+const float = keyframes`
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+`;
+
 const About = () => {
   return (
     <Flex
       maxWidth='1460px'
+      width='100%'
       px='8px'
       py='32px'
       justifyContent='center'
-      // alignItems='center'
+      alignItems='center'
       pointerEvents='none'
       direction='column'
       md={{ flexDirection: 'row-reverse', marginBottom: '64px' }}
@@ -42,15 +50,20 @@ const About = () => {
       <Box
         position='relative' // Needed for absolute positioning of children
         minW='50%'
+        md={{ width: '50%', paddingY: '32px' }}
+        // height='auto'
         aspectRatio='4096 / 2339'
       >
         {/* Screenshot Box with margin */}
         <Box
+          aspectRatio='4096 / 2339'
+          width='calc(100% - 32px)'
+          height='auto'
           p='2px'
           borderRadius='md'
           background='linear-gradient(to bottom, #8285FF, #0005E9, #000383)'
           m={4} // Margin so corner boxes appear to hover over edges
-          h='calc(100% - 2rem)' // Adjust height to account for margin (2rem = 32px total margin)
+          // h='calc(100% - 2rem)' // Adjust height to account for margin (2rem = 32px total margin)
         >
           <Card.Root
             borderRadius='md'
@@ -73,22 +86,32 @@ const About = () => {
           left={0}
           w='128px'
           h='60px'
-          bg='gray.200' // Placeholder background
+          bg='rgba(26, 26, 26, 0.5)'
+          backdropFilter='blur(10px)'
           borderRadius='md'
+          borderWidth='1px'
+          borderColor='white'
           zIndex={10}
+          animation={`${float} 4s ease-in-out infinite`}
+          animationDelay='0s'
         >
           {/* Content for top-left box */}
         </Box>
 
         {/* Top-right corner box */}
         <Box
-          position='absolute'
           top={0}
           right={0}
           w='128px'
           h='60px'
+          bg='rgba(26, 26, 26, 0.5)'
+          backdropFilter='blur(10px)'
           borderRadius='md'
+          borderWidth='1px'
+          borderColor='white'
           zIndex={10}
+          animation={`${float} 4s ease-in-out infinite`}
+          animationDelay='2s'
         >
           {/* Content for top-right box */}
         </Box>
