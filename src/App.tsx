@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Flex } from '@chakra-ui/react';
+import About from './components/About';
+import Clients from './components/Clients';
+import Demo from './components/Demo';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import HowItWorks from './components/HowItWorks';
+import Insights from './components/Insights';
+import Navbar from './components/Navbar';
+import WTLM from './components/WTLM';
+import bgImage from './assets/background.svg';
+import './index.css';
+
+// Navbar
+// Header
+// About
+// HowItWorks
+// Clients
+// Insights
+// Demo
+// WTLM
+// Footer
+
+// TODO: Fix horizontal overflow
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <Navbar />
+      <Header />
+      {/* <main style={{ background: '#111111' }}> */}
+      <Flex
+        as='main'
+        direction='column'
+        style={{ pointerEvents: 'auto' }}
+        backgroundImage={`url(${bgImage})`}
+        backgroundRepeat='no-repeat'
+        backgroundPosition='top center'
+        backgroundSize='auto 100%' // 🔑 Height is 100%, width scales to maintain aspect ratio
+      >
+        <About />
+        <HowItWorks />
+        <Clients />
+        <Insights />
+        <Demo />
+        <WTLM />
+      </Flex>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;

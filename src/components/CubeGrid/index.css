@@ -1,0 +1,180 @@
+.container {
+  position: relative;
+  transform: skewY(-20deg);
+  /* Force hardware acceleration */
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.container .cube {
+  position: relative;
+  z-index: 2;
+  transform: translate3d(calc(var(--z) * 200px), calc(var(--z) * 200px), 0);
+  /* Hardware acceleration for each cube layer */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.container .cube div {
+  position: absolute;
+  transform: translate3d(calc(-250px * var(--x)), calc(-250px * var(--y)), 0);
+  /* Hardware acceleration for positioning */
+  will-change: transform;
+  backface-visibility: hidden;
+}
+/* Top width, cube height, proximal side */
+.container .cube div span {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  background: #1a1a1a;
+  /* Optimized transitions - only animate transform and background */
+  transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+  border: 2px solid white;
+  border-radius: 2px;
+  /* Force hardware acceleration */
+  will-change: transform, background-color;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+/* Hover state */
+.container .cube div span.active {
+  background: #0005e9;
+  transform: translate3d(0, -100px, 0);
+}
+/* Side(s) Left side */
+.container .cube div span::before {
+  content: '';
+  position: absolute;
+  left: -160px;
+  width: 161px;
+  height: 100%;
+  background: #111111;
+  transform-origin: right;
+  transform: skewY(45deg) translate3d(0, 0, 0);
+  transition: background-color 0.3s ease-out;
+  border: 2px solid white;
+  border-radius: 2px;
+  /* Hardware acceleration */
+  will-change: background-color;
+  backface-visibility: hidden;
+}
+.container .cube div span.active::before {
+  background: #0004bd;
+}
+/* Top */
+.container .cube div span::after {
+  content: '';
+  position: absolute;
+  /* Height of top side */
+  top: -160px;
+  left: 0;
+  width: 101.5%;
+  height: 160px;
+  background: #000000;
+  transform-origin: bottom;
+  transform: skewX(45deg) translate3d(0, 0, 0);
+  transition: background-color 0.3s ease-out;
+  border: 2px solid white;
+  border-radius: 2px;
+  /* Hardware acceleration */
+  will-change: background-color;
+  backface-visibility: hidden;
+}
+.container .cube div span.active::after {
+  background: #0a0ec7;
+}
+
+/* Performance optimizations for Safari */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .container .cube div span {
+    /* Reduce transition duration on WebKit browsers */
+    /*     transition: transform 0.2s ease-out, background-color 0.2s ease-out; */
+    transition: transform 1s
+        linear(
+          0,
+          0.00768,
+          0.0417,
+          0.0953,
+          0.164,
+          0.246,
+          0.335,
+          0.429,
+          0.526,
+          0.622,
+          0.714,
+          0.802,
+          0.883,
+          0.957,
+          1.02,
+          1.08,
+          1.13,
+          1.16,
+          1.19,
+          1.21,
+          1.22,
+          1.23,
+          1.23,
+          1.22,
+          1.21,
+          1.19,
+          1.18,
+          1.16,
+          1.13,
+          1.11,
+          1.09,
+          1.07,
+          1.05,
+          1.03,
+          1.01,
+          0.997,
+          0.984,
+          0.973,
+          0.964,
+          0.957,
+          0.952,
+          0.949,
+          0.948,
+          0.948,
+          0.949,
+          0.951,
+          0.955,
+          0.959,
+          0.963,
+          0.968,
+          0.973,
+          0.978,
+          0.983,
+          0.988,
+          0.992,
+          0.996,
+          1,
+          1,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1.01,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ),
+      background-color 0.5s;
+  }
+  .container .cube div span::before,
+  .container .cube div span::after {
+    transition: background-color 0.2s ease-out;
+  }
+}
