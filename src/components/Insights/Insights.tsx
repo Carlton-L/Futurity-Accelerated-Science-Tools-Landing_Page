@@ -1,11 +1,13 @@
 import { Box, Card, Flex, Icon } from '@chakra-ui/react';
 import Emphasis from '../Emphasis';
 import Tag from '../Tag';
+import Button from '../Button';
 
 const Insights = () => {
   return (
     <Flex
       maxWidth='1460px'
+      width='100%'
       px='8px'
       py='32px'
       justifyContent='center'
@@ -13,6 +15,8 @@ const Insights = () => {
       pointerEvents='auto'
       direction='column'
       gap='16px'
+      mb='64px'
+      md={{ marginTop: '32px' }}
     >
       <Box
         position='relative'
@@ -42,8 +46,9 @@ const Insights = () => {
           h='100%'
           overflow='hidden'
           m='2px' // This creates the border effect
+          md={{ padding: '32px' }}
         >
-          <Card.Body>
+          <Card.Body md={{ gap: '32px' }}>
             <Tag>Exclusive Insights</Tag>
             <Card.Header display='inline' my='16px'>
               Share your voice. Get <Emphasis>early access.</Emphasis>
@@ -137,6 +142,9 @@ const Insights = () => {
               </Flex>
             </Card.Description>
           </Card.Body>
+          <Card.Footer padding='32px'>
+            <Button>Request a Demo</Button>
+          </Card.Footer>
         </Card.Root>
       </Box>
     </Flex>

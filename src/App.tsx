@@ -30,13 +30,16 @@ function App() {
       <Header />
       {/* <main style={{ background: '#111111' }}> */}
       <Flex
+        justifyContent='center'
+        alignItems='center'
         as='main'
         direction='column'
         style={{ pointerEvents: 'auto' }}
         backgroundImage={`url(${bgImage})`}
         backgroundRepeat='no-repeat'
         backgroundPosition='top center'
-        backgroundSize='auto 100%' // 🔑 Height is 100%, width scales to maintain aspect ratio
+        backgroundSize='cover'
+        width='100%' // 🔑 Height is 100%, width scales to maintain aspect ratio
       >
         <About />
         <HowItWorks />

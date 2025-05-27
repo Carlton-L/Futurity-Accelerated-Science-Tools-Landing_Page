@@ -2,6 +2,7 @@ import { Box, Card, Flex, Icon } from '@chakra-ui/react';
 import Emphasis from '../Emphasis';
 import Tag from '../Tag';
 import screenshotImg from '../../assets/screenshot.png';
+import Button from '../Button';
 
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
       // alignItems='center'
       pointerEvents='none'
       direction='column'
-      md={{ flexDirection: 'row-reverse' }}
+      md={{ flexDirection: 'row-reverse', marginBottom: '64px' }}
       gap='16px'
     >
       {/* <Box
@@ -93,7 +94,7 @@ const About = () => {
         </Box>
       </Box>
       <Card.Root pointerEvents='auto'>
-        <Card.Body gap='32px'>
+        <Card.Body gap='32px' md={{ padding: '32px' }}>
           <Tag>Why Choose FAST?</Tag>
           <Card.Header display='inline'>
             Accelerate Your <Emphasis>Innovation Process</Emphasis>
@@ -214,7 +215,9 @@ const About = () => {
             </Flex>
           </Card.Description>
         </Card.Body>
-        <Card.Footer justifyContent='flex-end'></Card.Footer>
+        <Card.Footer padding='32px'>
+          <Button>Request a Demo</Button>
+        </Card.Footer>
       </Card.Root>
     </Flex>
   );

@@ -17,10 +17,12 @@ const Clients = () => {
       pointerEvents='auto'
       direction='column'
       gap='16px'
-      md={{ gap: '32px' }}
+      sm={{ gap: '32px' }}
+      // md={{ gap: '32px' }}
+      my='32px'
     >
       <Tag>Our Clients</Tag>
-      <Heading size='2xl' md={{ fontSize: '48px' }}>
+      <Heading fontSize='32px' sm={{ fontSize: '48px' }}>
         Who We <Emphasis>Work With</Emphasis>
       </Heading>
       <Text>
@@ -91,6 +93,7 @@ const Clients = () => {
         direction='column'
         gap='8px'
         md={{ gap: '16px', flexDirection: 'row' }}
+        width='100%'
       >
         <Flex
           gap='8px'
@@ -100,7 +103,7 @@ const Clients = () => {
           {/* Enterprises */}
           <Card.Root md={{ paddingY: '32px' }}>
             <Card.Body gap='8px' md={{ gap: '16px', paddingY: '0' }}>
-              <Card.Header>
+              <Card.Header fontSize='16px'>
                 <Flex
                   w='100%'
                   justifyContent='center'
@@ -109,7 +112,8 @@ const Clients = () => {
                   gap='8px'
                   textAlign='center'
                   fontSize='24px'
-                  lg={{ fontSize: '32px' }}
+                  md={{ fontSize: '20px' }}
+                  lg={{ fontSize: '24px' }}
                 >
                   <svg width='0' height='0'>
                     <linearGradient
@@ -142,7 +146,7 @@ const Clients = () => {
           {/* Govt */}
           <Card.Root md={{ paddingY: '32px' }}>
             <Card.Body gap='8px' md={{ gap: '16px', paddingY: '0' }}>
-              <Card.Header>
+              <Card.Header fontSize='16px'>
                 {' '}
                 <Flex
                   w='100%'
@@ -151,8 +155,9 @@ const Clients = () => {
                   alignItems='center'
                   gap='8px'
                   textAlign='center'
+                  md={{ fontSize: '20px' }}
                   fontSize='24px'
-                  lg={{ fontSize: '32px' }}
+                  lg={{ fontSize: '24px' }}
                 >
                   <svg width='0' height='0'>
                     <linearGradient
@@ -191,7 +196,7 @@ const Clients = () => {
           {/* R&D */}
           <Card.Root md={{ paddingY: '32px' }}>
             <Card.Body gap='8px' md={{ gap: '16px', paddingY: '0' }}>
-              <Card.Header>
+              <Card.Header fontSize='16px'>
                 {' '}
                 <Flex
                   w='100%'
@@ -200,8 +205,9 @@ const Clients = () => {
                   alignItems='center'
                   gap='8px'
                   textAlign='center'
+                  md={{ fontSize: '20px' }}
                   fontSize='24px'
-                  lg={{ fontSize: '32px' }}
+                  lg={{ fontSize: '24px' }}
                 >
                   <svg width='0' height='0'>
                     <linearGradient
@@ -234,7 +240,7 @@ const Clients = () => {
           {/* INVENT */}
           <Card.Root md={{ paddingY: '32px' }}>
             <Card.Body gap='8px' md={{ gap: '16px', paddingY: '0' }}>
-              <Card.Header>
+              <Card.Header fontSize='16px'>
                 {' '}
                 <Flex
                   w='100%'
@@ -243,8 +249,9 @@ const Clients = () => {
                   alignItems='center'
                   gap='8px'
                   textAlign='center'
+                  md={{ fontSize: '20px' }}
                   fontSize='24px'
-                  lg={{ fontSize: '32px' }}
+                  lg={{ fontSize: '24px' }}
                 >
                   <svg width='0' height='0'>
                     <linearGradient

@@ -4,8 +4,15 @@ import WomenTechEU from '../../assets/WomenTechEU.png';
 
 const Footer = () => {
   return (
-    <Box width='100%' bg='#1a1a1a' padding='16px' md={{ padding: '32px' }}>
-      <Flex direction='column'>
+    <Box
+      width='100%'
+      bg='#1a1a1a'
+      padding='16px'
+      md={{ padding: '32px' }}
+      display='flex'
+      justifyContent='center'
+    >
+      <Flex direction='column' width='100%' maxWidth='1480px'>
         <Flex
           direction='column'
           md={{ flexDirection: 'row', justifyContent: 'space-between' }}
@@ -26,14 +33,15 @@ const Footer = () => {
           direction='column'
           alignItems='center'
           gap='32px'
-          lg={{ flexDirection: 'row' }}
+          lg={{ flexDirection: 'row', justifyContent: 'space-between' }}
           pt='32px'
         >
           <Text textAlign='center'>© MarsBound S.L. All rights reserved.</Text>
           <Flex direction='column' gap='16px' md={{ flexDirection: 'row' }}>
             <Link>Privacy Policy</Link>
-            <Link>Cookie Policy</Link>
-            <Link>Cookie Settings</Link>
+            {/* Cookie Policy and Setting not necessary without Google Analytics */}
+            {/* <Link>Cookie Policy</Link>
+            <Link>Cookie Settings</Link> */}
           </Flex>
         </Flex>
       </Flex>

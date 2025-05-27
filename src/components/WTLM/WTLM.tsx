@@ -8,8 +8,11 @@ const WTLM = () => {
       backdropBlur='10px'
       backdropFilter='blur(10px)'
       backgroundColor='rgba(26, 26, 26, 0.5)'
+      display='flex'
+      justifyContent='center'
     >
       <Flex
+        width='100%'
         maxWidth='1460px'
         padding='8px'
         justifyContent='center'

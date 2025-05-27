@@ -13,11 +13,13 @@ const HowItWorks = () => {
       pointerEvents='auto'
       direction='column'
       gap='16px'
+      md={{ marginBottom: '64px' }}
     >
       <Heading
-        size='2xl'
-        mb='8px'
-        md={{ fontSize: '48px', marginBottom: '32px' }}
+        fontSize='32px'
+        mb='16px'
+        md={{ marginBottom: '32px' }}
+        sm={{ fontSize: '48px' }}
       >
         How <Emphasis>FAST</Emphasis> Works
       </Heading>
