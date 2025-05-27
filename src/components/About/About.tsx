@@ -100,6 +100,7 @@ const About = () => {
 
         {/* Top-right corner box */}
         <Box
+          position='absolute'
           top={0}
           right={0}
           w='128px'
