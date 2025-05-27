@@ -50,6 +50,7 @@ const About = () => {
       <Box
         position='relative' // Needed for absolute positioning of children
         minW='50%'
+        width='100%'
         md={{ width: '50%', paddingY: '32px' }}
         // height='auto'
         aspectRatio='4096 / 2339'
