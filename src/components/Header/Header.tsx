@@ -1,4 +1,4 @@
-import { Flex, Heading, Text } from '@chakra-ui/react';
+import { Flex, Heading, Link, Text } from '@chakra-ui/react';
 import CubeGrid from '../CubeGrid';
 import Emphasis from '../Emphasis';
 import Button from '../Button';
@@ -59,7 +59,9 @@ const Header = () => {
             pointerEvents='auto'
           >
             <Button>Request a Demo</Button>
-            <Button>Learn More</Button>
+            <Button asChild>
+              <Link href='#About'>Learn More</Link>
+            </Button>
           </Flex>
         </Flex>
       </section>
