@@ -3,7 +3,7 @@ import { keyframes } from '@emotion/react';
 import Emphasis from '../Emphasis';
 import Tag from '../Tag';
 import screenshotImg from '../../assets/screenshot.png';
-import Button from '../Button';
+import DemoButton from '../DemoButton';
 import Badge from '../Badge';
 
 const float = keyframes`
@@ -260,7 +260,7 @@ const About = () => {
           </Card.Description>
         </Card.Body>
         <Card.Footer padding='32px'>
-          <Button>Request a Demo</Button>
+          <DemoButton />
         </Card.Footer>
       </Card.Root>
     </Flex>

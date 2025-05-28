@@ -1,7 +1,7 @@
 import { Box, Card, Flex, Icon } from '@chakra-ui/react';
 import Emphasis from '../Emphasis';
 import Tag from '../Tag';
-import Button from '../Button';
+import DemoButton from '../DemoButton';
 
 const Insights = () => {
   return (
@@ -145,7 +145,7 @@ const Insights = () => {
             </Card.Description>
           </Card.Body>
           <Card.Footer padding='32px'>
-            <Button>Request a Demo</Button>
+            <DemoButton />
           </Card.Footer>
         </Card.Root>
       </Box>

@@ -11,7 +11,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import Button from '../Button';
+import DemoButton from '../DemoButton';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -293,7 +293,7 @@ const Navbar = () => {
           <Link color='white' href='#Insights'>
             Insights
           </Link>
-          <Button>Request a Demo</Button>
+          <DemoButton />
         </HStack>
         <Box mr='32px' my='auto' hideFrom='md'>
           <Drawer.Root

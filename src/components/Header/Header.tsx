@@ -2,6 +2,7 @@ import { Flex, Heading, Link, Text } from '@chakra-ui/react';
 import CubeGrid from '../CubeGrid';
 import Emphasis from '../Emphasis';
 import Button from '../Button';
+import DemoButton from '../DemoButton';
 
 const Header = () => {
   return (
@@ -58,7 +59,7 @@ const Header = () => {
             md={{ gap: '16px', flexDirection: 'row' }}
             pointerEvents='auto'
           >
-            <Button>Request a Demo</Button>
+            <DemoButton />
             <Button asChild>
               <Link href='#About'>Learn More</Link>
             </Button>
