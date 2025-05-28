@@ -1,7 +1,6 @@
 import { Flex } from '@chakra-ui/react';
 import About from './components/About';
 import Clients from './components/Clients';
-import Demo from './components/Demo';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import HowItWorks from './components/HowItWorks';
@@ -17,7 +16,6 @@ import './index.css';
 // HowItWorks
 // Clients
 // Insights
-// Demo
 // WTLM
 // Footer
 
@@ -45,7 +43,6 @@ function App() {
         <HowItWorks />
         <Clients />
         <Insights />
-        <Demo />
         <WTLM />
       </Flex>
       <Footer />

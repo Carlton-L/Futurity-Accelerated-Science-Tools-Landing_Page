@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
-import Button from '../Button';
+import DemoButton from '../DemoButton';
 
 const WTLM = () => {
   return (
@@ -28,7 +28,7 @@ const WTLM = () => {
           Book a quick demo with our experts and see how FAST can accelerate
           your innovation strategy.
         </Text>
-        <Button>Request a Demo</Button>
+        <DemoButton />
       </Flex>
     </Box>
   );
