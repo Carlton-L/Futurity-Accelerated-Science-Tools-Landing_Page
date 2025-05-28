@@ -79,7 +79,7 @@ const Clients = () => {
                 marginLeft: '32px',
                 maxWidth: '100%',
               }}
-              color='#A7ACB2'
+              color='#ffffff'
               fontFamily='TT Norms Pro Normal'
               maxWidth='540px'
             >

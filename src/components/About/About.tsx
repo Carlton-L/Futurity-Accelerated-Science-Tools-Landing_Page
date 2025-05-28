@@ -86,7 +86,6 @@ const About = () => {
           position='absolute'
           bottom={0}
           left={0}
-          w='128px'
           h='60px'
           bg='rgba(26, 26, 26, 0.5)'
           backdropFilter='blur(10px)'
@@ -96,8 +95,17 @@ const About = () => {
           zIndex={10}
           animation={`${float} 4s ease-in-out infinite`}
           animationDelay='0s'
+          padding='8px'
+          display='flex'
+          fontSize='14px'
+          textAlign='left'
+          gap='4px'
+          fontWeight='900'
         >
-          <Badge fontWeight='900'>90%</Badge>
+          <Badge fontSize='16px'>90%</Badge>
+          Lower
+          <br />
+          Costs
         </Box>
 
         {/* Top-right corner box */}
@@ -105,7 +113,6 @@ const About = () => {
           position='absolute'
           top={0}
           right={0}
-          w='128px'
           h='60px'
           bg='rgba(26, 26, 26, 0.5)'
           backdropFilter='blur(10px)'
@@ -115,10 +122,17 @@ const About = () => {
           zIndex={10}
           animation={`${float} 4s ease-in-out infinite`}
           animationDelay='2s'
+          padding='8px'
+          display='flex'
+          fontSize='14px'
+          textAlign='left'
+          gap='4px'
+          fontWeight='900'
         >
-          <Badge fontSize='20px' fontWeight='900'>
-            6x
-          </Badge>
+          <Badge fontSize='20px'>6x</Badge>
+          Faster
+          <br />
+          Innovation
         </Box>
       </Box>
       <Card.Root pointerEvents='auto'>
