@@ -6,6 +6,8 @@ import Badge from '../Badge';
 const HowItWorks = () => {
   return (
     <Flex
+      id='HowItWorks'
+      scrollMarginTop='100px'
       maxWidth='1460px'
       px='8px'
       py='32px'

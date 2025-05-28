@@ -15,6 +15,8 @@ const float = keyframes`
 const About = () => {
   return (
     <Flex
+      id='About'
+      scrollMarginTop='100px'
       maxWidth='1460px'
       width='100%'
       px='8px'

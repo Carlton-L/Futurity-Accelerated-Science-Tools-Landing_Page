@@ -9,6 +9,8 @@ import Tag from '../Tag';
 const Clients = () => {
   return (
     <Flex
+      id='Clients'
+      scrollMarginTop='100px'
       maxWidth='1460px'
       px='8px'
       py='32px'

@@ -6,6 +6,8 @@ import Button from '../Button';
 const Insights = () => {
   return (
     <Flex
+      id='Insights'
+      scrollMarginTop='100px'
       maxWidth='1460px'
       width='100%'
       px='8px'

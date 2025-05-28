@@ -32,10 +32,10 @@ const Header = () => {
           md={{ gap: '32px' }}
         >
           <Heading
-            fontSize='32px'
-            md={{ fontSize: '64px' }}
+            fontSize='48px'
+            md={{ lineHeight: '64px', fontSize: '64px' }}
             maxWidth='560px'
-            lineHeight='64px'
+            lineHeight='48px'
           >
             Build better futures <Emphasis>faster</Emphasis> with FAST
           </Heading>
