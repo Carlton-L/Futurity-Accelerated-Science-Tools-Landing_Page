@@ -146,7 +146,7 @@ const About = () => {
           <Card.Description color='white'>
             <Flex direction='column' gap='4'>
               <Flex gap='2'>
-                <Icon size='sm'>
+                <Icon size='sm' boxSize={{ sm: '20px', md: '20px' }}>
                   <svg
                     viewBox='0 0 20 20'
                     fill='none'
@@ -174,7 +174,7 @@ const About = () => {
                 months to weeks.
               </Flex>
               <Flex gap='2'>
-                <Icon size='sm'>
+                <Icon size='sm' boxSize={{ sm: '20px', md: '20px' }}>
                   <svg
                     viewBox='0 0 20 20'
                     fill='none'
@@ -201,7 +201,7 @@ const About = () => {
                 optimize R&D resources for maximum ROI.
               </Flex>
               <Flex gap='2'>
-                <Icon size='sm'>
+                <Icon size='sm' boxSize={{ sm: '20px', md: '20px' }}>
                   <svg
                     viewBox='0 0 20 20'
                     fill='none'
@@ -229,7 +229,7 @@ const About = () => {
                 scientific research, and market trends.
               </Flex>
               <Flex gap='2'>
-                <Icon size='sm'>
+                <Icon size='sm' boxSize={{ sm: '20px', md: '20px' }}>
                   <svg
                     viewBox='0 0 20 20'
                     fill='none'
