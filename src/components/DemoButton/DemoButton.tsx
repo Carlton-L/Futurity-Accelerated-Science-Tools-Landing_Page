@@ -115,7 +115,11 @@ const DemoButton = () => {
               </form>
             </Dialog.Body>
             <Dialog.CloseTrigger asChild>
-              <CloseButton size='sm' />
+              <CloseButton
+                size='sm'
+                color='white'
+                _hover={{ color: '#111111' }}
+              />
             </Dialog.CloseTrigger>
           </Dialog.Content>
         </Dialog.Positioner>
