@@ -4,6 +4,7 @@ import Emphasis from '../Emphasis';
 import Tag from '../Tag';
 import screenshotImg from '../../assets/screenshot.png';
 import Button from '../Button';
+import Badge from '../Badge';
 
 const float = keyframes`
   0% { transform: translateY(0px); }
@@ -96,7 +97,7 @@ const About = () => {
           animation={`${float} 4s ease-in-out infinite`}
           animationDelay='0s'
         >
-          {/* Content for top-left box */}
+          <Badge fontWeight='900'>90%</Badge>
         </Box>
 
         {/* Top-right corner box */}
@@ -115,7 +116,9 @@ const About = () => {
           animation={`${float} 4s ease-in-out infinite`}
           animationDelay='2s'
         >
-          {/* Content for top-right box */}
+          <Badge fontSize='20px' fontWeight='900'>
+            6x
+          </Badge>
         </Box>
       </Box>
       <Card.Root pointerEvents='auto'>
