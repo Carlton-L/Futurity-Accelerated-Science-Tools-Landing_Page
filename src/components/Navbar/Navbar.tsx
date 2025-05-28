@@ -296,13 +296,19 @@ const Navbar = () => {
           <Button>Request a Demo</Button>
         </HStack>
         <Box mr='32px' my='auto' hideFrom='md'>
-          <Drawer.Root open={open} onOpenChange={(e) => setOpen(e.open)}>
+          <Drawer.Root
+            size='full'
+            open={open}
+            onOpenChange={(e) => setOpen(e.open)}
+          >
             <Drawer.Trigger asChild>
               <IconButton
                 variant='outline'
                 size='sm'
                 hideFrom='md'
                 style={{ pointerEvents: 'auto' }}
+                color='white'
+                _hover={{ color: '#111111' }}
               >
                 <Icon>
                   <svg
@@ -322,20 +328,62 @@ const Navbar = () => {
             <Portal>
               <Drawer.Backdrop />
               <Drawer.Positioner>
-                <Drawer.Content>
-                  <Drawer.Header>
-                    <Drawer.Title>Drawer Title</Drawer.Title>
-                  </Drawer.Header>
-                  <Drawer.Body>
+                <Drawer.Content
+                  background='rgba(26, 26, 26, 0.5)'
+                  backdropFilter='blur(40px)'
+                >
+                  <Drawer.Body py='64px'>
                     <VStack>
-                      <Link href='#About'>About</Link>
-                      <Link href='#HowItWorks'>How it Works</Link>
-                      <Link href='#Clients'>Clients</Link>
-                      <Link href='#Insights'>Insights</Link>
+                      <Drawer.ActionTrigger asChild>
+                        <Link
+                          color='white'
+                          fontSize='32px'
+                          lineHeight='64px'
+                          href='#About'
+                        >
+                          About
+                        </Link>
+                      </Drawer.ActionTrigger>
+                      <Drawer.ActionTrigger asChild>
+                        <Link
+                          color='white'
+                          fontSize='32px'
+                          lineHeight='64px'
+                          href='#HowItWorks'
+                        >
+                          How it Works
+                        </Link>
+                      </Drawer.ActionTrigger>
+                      <Drawer.ActionTrigger asChild>
+                        <Link
+                          color='white'
+                          fontSize='32px'
+                          lineHeight='64px'
+                          href='#Clients'
+                        >
+                          Clients
+                        </Link>
+                      </Drawer.ActionTrigger>
+                      <Drawer.ActionTrigger asChild>
+                        <Link
+                          color='white'
+                          fontSize='32px'
+                          lineHeight='64px'
+                          href='#Insights'
+                        >
+                          Insights
+                        </Link>
+                      </Drawer.ActionTrigger>
                     </VStack>
                   </Drawer.Body>
                   <Drawer.CloseTrigger asChild>
-                    <CloseButton size='sm' />
+                    <CloseButton
+                      size='sm'
+                      color='white'
+                      _hover={{ color: '#111111' }}
+                      mr='32px'
+                      mt='16px'
+                    />
                   </Drawer.CloseTrigger>
                 </Drawer.Content>
               </Drawer.Positioner>
