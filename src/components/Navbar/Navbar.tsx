@@ -16,7 +16,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Flex m='8px' justify='space-between'>
+      <Flex m='8px' justify='space-between' position='sticky' top='0'>
         <svg
           width='181'
           height='32'
