@@ -19,17 +19,14 @@ const CubeGrid: React.FC = () => {
       // Clear existing content
       container.innerHTML = '';
 
-      const zValues = [
-        -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-        10,
-      ];
+      const zValues = [-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7];
 
       zValues.forEach((z) => {
         const cube = document.createElement('div');
         cube.classList.add('cube');
         cube.style.setProperty('--z', z.toString());
 
-        for (let x = -10; x <= 10; x++) {
+        for (let x = -7; x <= 7; x++) {
           const div = document.createElement('div');
           div.style.setProperty('--x', x.toString());
           div.style.setProperty('--y', '0');

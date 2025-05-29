@@ -308,7 +308,8 @@ const Navbar = () => {
                 hideFrom='md'
                 style={{ pointerEvents: 'auto' }}
                 color='white'
-                _hover={{ color: '#111111' }}
+                backgroundColor='#1a1a1a'
+                _hover={{ color: '#111111', backgroundColor: '#ffffff' }}
               >
                 <Icon>
                   <svg
@@ -380,9 +381,12 @@ const Navbar = () => {
                     <CloseButton
                       size='sm'
                       color='white'
-                      _hover={{ color: '#111111' }}
+                      backgroundColor='#1a1a1a'
+                      _hover={{ color: '#111111', backgroundColor: '#ffffff' }}
                       mr='32px'
                       mt='16px'
+                      borderColor='white'
+                      sm={{ borderColor: 'transparent' }}
                     />
                   </Drawer.CloseTrigger>
                 </Drawer.Content>

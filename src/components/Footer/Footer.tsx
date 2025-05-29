@@ -58,14 +58,20 @@ const Footer = () => {
               <Portal>
                 <Dialog.Backdrop />
                 <Dialog.Positioner>
-                  <Dialog.Content background='#1a1a1a'>
+                  <Dialog.Content
+                    background='#1a1a1a'
+                    css={{
+                      WebkitOverflowScrolling: 'touch',
+                    }}
+                  >
                     <Dialog.Header>
-                      <Dialog.Title>Privacy Policy</Dialog.Title>
+                      <Dialog.Title color='white'>Privacy Policy</Dialog.Title>
                     </Dialog.Header>
                     <Dialog.Body
                       display='flex'
                       flexDirection='column'
                       gap='16px'
+                      color='white'
                     >
                       <Text color='#646E78'>Last updated: 5/28/2025</Text>
                       <Heading>1. Introduction</Heading>
@@ -176,8 +182,12 @@ const Footer = () => {
                       <Dialog.ActionTrigger asChild>
                         <Button
                           variant='outline'
+                          backgroundColor='#1a1a1a'
                           color='white'
-                          _hover={{ color: '#111111' }}
+                          _hover={{
+                            color: '#111111',
+                            backgroundColor: '#ffffff',
+                          }}
                         >
                           Close
                         </Button>
@@ -186,8 +196,12 @@ const Footer = () => {
                     <Dialog.CloseTrigger asChild>
                       <CloseButton
                         size='sm'
+                        backgroundColor='#1a1a1a'
                         color='white'
-                        _hover={{ color: '#111111' }}
+                        _hover={{
+                          color: '#111111',
+                          backgroundColor: '#ffffff',
+                        }}
                       />
                     </Dialog.CloseTrigger>
                   </Dialog.Content>

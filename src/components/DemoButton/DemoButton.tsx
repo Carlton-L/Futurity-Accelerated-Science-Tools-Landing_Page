@@ -18,14 +18,14 @@ const DemoButton = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button>Request a Demo</Button>
+        <Button backgroundColor='#1a1a1a'>Request a Demo</Button>
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />
         <Dialog.Positioner>
           <Dialog.Content background='#1a1a1a'>
             <Dialog.Header>
-              <Dialog.Title fontSize='32px'>
+              <Dialog.Title color='white' fontSize='32px'>
                 Request a <Emphasis>Demo</Emphasis>
               </Dialog.Title>
             </Dialog.Header>
@@ -121,7 +121,11 @@ const DemoButton = () => {
                     </Field.Root>
                   </Fieldset.Content>
 
-                  <Button type='submit' alignSelf='flex-start'>
+                  <Button
+                    type='submit'
+                    alignSelf='flex-start'
+                    backgroundColor='#1a1a1a'
+                  >
                     Submit
                   </Button>
                 </Fieldset.Root>
@@ -131,7 +135,10 @@ const DemoButton = () => {
               <CloseButton
                 size='sm'
                 color='white'
-                _hover={{ color: '#111111' }}
+                // borderColor='white'
+
+                backgroundColor='#1a1a1a'
+                _hover={{ color: '#111111', backgroundColor: '#ffffff' }}
               />
             </Dialog.CloseTrigger>
           </Dialog.Content>
