@@ -17,8 +17,9 @@ const Header = () => {
           // display: 'inline-block',
           position: 'relative',
           zIndex: 1,
-          background: 'rgba(26, 26, 26, 0.2)', // #1a1a1a with 50% opacity
+          background: 'rgba(26, 26, 26, 0.4)', // #1a1a1a with 50% opacity
           backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
           color: 'white',
         }}
       >
