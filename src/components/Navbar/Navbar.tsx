@@ -332,6 +332,9 @@ const Navbar = () => {
                 <Drawer.Content
                   background='rgba(26, 26, 26, 0.5)'
                   backdropFilter='blur(40px)'
+                  style={{
+                    WebkitBackdropFilter: 'blur(40px)',
+                  }}
                 >
                   <Drawer.Body py='64px'>
                     <VStack>
