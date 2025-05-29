@@ -22,7 +22,7 @@ const CubeGrid: React.FC = () => {
         cube.classList.add('cube');
         cube.style.setProperty('--z', z.toString());
 
-        for (let x = -100; x <= 100; x++) {
+        for (let x = -10; x <= 10; x++) {
           const div = document.createElement('div');
           div.style.setProperty('--x', x.toString());
           div.style.setProperty('--y', '0');
