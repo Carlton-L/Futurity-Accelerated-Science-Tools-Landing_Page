@@ -45,104 +45,104 @@ const Navbar = () => {
             preserveAspectRatio='xMidYMid meet'
           >
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M0.891657 8.03769L13.6958 15.4714L26.498 8.03769L13.6958 0.603961L0.891657 8.03769ZM0.14861 7.77885L13.5472 0L13.8444 9.59615e-06L27.241 7.77886V8.29652L13.8444 16.0754L13.5472 16.0754L0.14861 8.29653L0.14861 7.77885Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M0 8.03767L0.445825 7.77883L13.8444 15.5577L13.993 15.8165V31.3722L13.5472 31.6311L0.14861 23.8522L0 23.5934V8.03767ZM0.594435 8.55534V23.4208L13.3986 30.8546V15.9891L0.594435 8.55534Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M13.993 15.9891V30.8545L26.7951 23.4208V8.55538L13.993 15.9891ZM13.5472 15.5577L26.9437 7.77884L27.3896 8.03767V23.5934L27.241 23.8522L13.8444 31.6311L13.3986 31.3722V15.8165L13.5472 15.5577Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M13.7701 0.12942V15.8597L0.222913 23.7228V7.99455L13.7701 0.12942ZM0.371522 8.08083V23.464L13.6215 15.7734V0.388257L0.371522 8.08083Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M13.6215 0.129411L27.1667 7.99455V23.7228L13.6215 15.8597V0.129411ZM13.7701 0.388266V15.7734L27.0181 23.464V8.08083L13.7701 0.388266Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M9.65639 8.98014L9.82799 8.88051H17.5636L17.7352 8.98018L21.601 15.7169L21.601 15.9161L17.7352 22.6509L17.5636 22.7505H9.82799L9.65641 22.6509L5.78862 15.9162L5.7886 15.7169L9.65639 8.98014ZM9.94239 9.27902L6.18901 15.8165L9.94238 22.352H17.4492L21.2006 15.8165L17.4491 9.27902H9.94239Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M13.9246 15.8165L17.5635 22.1528L21.2006 15.8165L17.5635 9.47835L13.9246 15.8165ZM13.5242 15.7169L17.392 8.98014L17.7352 8.98018L21.601 15.7169L21.601 15.9161L17.7352 22.6509L17.392 22.6509L13.5242 15.9162L13.5242 15.7169Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M9.65639 8.98014L9.82799 8.88051H17.5636L17.7352 9.17939L13.8674 15.9161L13.6958 16.0158H5.9602L5.7886 15.7169L9.65639 8.98014ZM9.94239 9.27902L6.3034 15.6173H13.5814L17.2204 9.27902H9.94239Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M5.78862 15.9162L5.9602 15.6173H13.6958L13.8674 15.7169L17.7352 22.4516L17.5636 22.7505H9.82799L9.65641 22.6509L5.78862 15.9162ZM6.30345 16.0158L9.94238 22.352L17.2203 22.352L13.5814 16.0158H6.30345Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M9.78509 9.05486H17.5779L21.4723 15.8414H13.6815L9.78509 9.05486ZM9.87089 9.10467L13.7101 15.7916H21.3865L17.5493 9.10467H9.87089Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M13.6815 15.7916H21.4723L17.5779 22.5762H9.78509L13.6815 15.7916ZM13.7101 15.8414L9.8709 22.5264H17.5493L21.3865 15.8414H13.7101Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M9.82532 9.10453L0.29454 8.06243L0.299895 8.01291L9.83067 9.05501L9.82532 9.10453Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M17.5409 9.08983L13.6731 0.268887L13.7184 0.24879L17.5862 9.06974L17.5409 9.08983Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M21.4094 15.8018L27.0724 8.02296L27.1123 8.05238L21.4494 15.8312L21.4094 15.8018Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M17.5663 22.5265L27.095 23.5686L27.0897 23.6182L17.5609 22.5761L17.5663 22.5265Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M9.85065 22.5413L13.7184 31.3622L13.6731 31.3823L9.80533 22.5614L9.85065 22.5413Z'
               fill='white'
             />
             <path
-              fill-rule='evenodd'
-              clip-rule='evenodd'
+              fillRule='evenodd'
+              clipRule='evenodd'
               d='M5.98019 15.8312L0.317201 23.6081L0.277234 23.5787L5.94022 15.8018L5.98019 15.8312Z'
               fill='white'
             />
