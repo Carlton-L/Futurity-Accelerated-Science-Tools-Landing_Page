@@ -1,8 +1,10 @@
 import {
   Badge,
+  Checkbox,
   CloseButton,
   Dialog,
   Field,
+  FieldRequiredIndicator,
   Fieldset,
   Input,
   Portal,
@@ -105,6 +107,17 @@ const DemoButton = () => {
                         />
                       </Field.Label>
                       <Textarea placeholder='Type your message here' />
+                    </Field.Root>
+
+                    <Field.Root required>
+                      <Checkbox.Root>
+                        <Checkbox.HiddenInput />
+                        <Checkbox.Control />
+                        <Checkbox.Label>
+                          I consent to Futurity contacting me about this demo
+                          request <FieldRequiredIndicator />
+                        </Checkbox.Label>
+                      </Checkbox.Root>
                     </Field.Root>
                   </Fieldset.Content>
 
