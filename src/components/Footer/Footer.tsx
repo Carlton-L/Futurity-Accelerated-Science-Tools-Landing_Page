@@ -33,7 +33,7 @@ const Footer = () => {
         >
           <Flex direction='column' gap='32px'>
             <Image src={FuturitySystemsLogo} maxWidth='256px' />
-            <Text textAlign='left' md={{ maxWidth: '820px' }}>
+            <Text color='white' textAlign='left' md={{ maxWidth: '820px' }}>
               Pioneering scientific solutions and innovation for Fortune 500
               companies and givernmental agencies worldwide.
             </Text>
@@ -47,7 +47,9 @@ const Footer = () => {
           lg={{ flexDirection: 'row', justifyContent: 'space-between' }}
           pt='32px'
         >
-          <Text textAlign='center'>© MarsBound S.L. All rights reserved.</Text>
+          <Text textAlign='center' color='white'>
+            © MarsBound S.L. All rights reserved.
+          </Text>
           <Flex direction='column' gap='16px' md={{ flexDirection: 'row' }}>
             <Dialog.Root>
               <Dialog.Trigger asChild>

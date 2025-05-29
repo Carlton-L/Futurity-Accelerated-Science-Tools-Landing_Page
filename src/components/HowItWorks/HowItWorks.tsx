@@ -22,6 +22,7 @@ const HowItWorks = () => {
         mb='16px'
         md={{ marginBottom: '32px' }}
         sm={{ fontSize: '48px' }}
+        color='white'
       >
         How <Emphasis>FAST</Emphasis> Works
       </Heading>

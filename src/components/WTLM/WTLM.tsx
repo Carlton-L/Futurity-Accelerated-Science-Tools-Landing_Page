@@ -23,8 +23,8 @@ const WTLM = () => {
         py='128px'
         md={{ py: '140px' }}
       >
-        <Heading>Want to Learn More?</Heading>
-        <Text>
+        <Heading color='white'>Want to Learn More?</Heading>
+        <Text color='white'>
           Book a quick demo with our experts and see how FAST can accelerate
           your innovation strategy.
         </Text>

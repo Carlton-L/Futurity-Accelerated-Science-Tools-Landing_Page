@@ -22,9 +22,10 @@ const Clients = () => {
       sm={{ gap: '32px' }}
       // md={{ gap: '32px' }}
       my='32px'
+      color='white'
     >
       <Tag>Our Clients</Tag>
-      <Heading fontSize='32px' sm={{ fontSize: '48px' }}>
+      <Heading color='white' fontSize='32px' sm={{ fontSize: '48px' }}>
         Who We <Emphasis>Work With</Emphasis>
       </Heading>
       <Text>

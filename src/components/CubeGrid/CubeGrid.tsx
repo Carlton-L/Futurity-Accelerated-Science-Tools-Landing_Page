@@ -3,8 +3,15 @@ import './index.css';
 
 const CubeGrid: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const idleAnimationRef = useRef<number | null>(null);
+  const isMouseInsideRef = useRef(false);
+  const activeSpansRef = useRef<Set<HTMLElement>>(new Set());
+  const lastInteractionRef = useRef<number>(Date.now());
+  const inactivityTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
+    const activeSpansSet = activeSpansRef.current;
+
     const cubes = () => {
       const container = containerRef.current;
       if (!container) return;
@@ -33,159 +40,167 @@ const CubeGrid: React.FC = () => {
         }
         container.appendChild(cube);
       });
-      addHoverEvent();
+      addMouseEvents();
+      startIdleAnimation();
     };
 
-    const addHoverEvent = () => {
+    const updateLastInteraction = () => {
+      lastInteractionRef.current = Date.now();
+
+      // Clear inactivity timeout and restart it
+      if (inactivityTimeoutRef.current) {
+        clearTimeout(inactivityTimeoutRef.current);
+      }
+
+      // Set timeout to detect inactivity (500ms after last interaction)
+      inactivityTimeoutRef.current = setTimeout(() => {
+        isMouseInsideRef.current = false;
+        // Clear any manually activated spans after inactivity
+        activeSpansRef.current.forEach((span) => {
+          span.classList.remove('active');
+        });
+        activeSpansRef.current.clear();
+        startIdleAnimation();
+      }, 500);
+    };
+
+    const addMouseEvents = () => {
+      const container = containerRef.current;
+      if (!container) return;
+
       const spans = document.querySelectorAll(
         '.cube span'
       ) as NodeListOf<HTMLSpanElement>;
-      let currentTouchTarget: HTMLElement | null = null;
-      let isTouch = false;
 
+      // Container mouse/touch interaction detection
+      container.addEventListener('mouseenter', () => {
+        isMouseInsideRef.current = true;
+        stopIdleAnimation();
+        updateLastInteraction();
+      });
+
+      container.addEventListener('mousemove', () => {
+        if (!isMouseInsideRef.current) {
+          isMouseInsideRef.current = true;
+          stopIdleAnimation();
+        }
+        updateLastInteraction();
+      });
+
+      container.addEventListener('mouseleave', () => {
+        isMouseInsideRef.current = false;
+        // Clear any manually activated spans when mouse leaves
+        activeSpansRef.current.forEach((span) => {
+          span.classList.remove('active');
+        });
+        activeSpansRef.current.clear();
+        startIdleAnimation();
+      });
+
+      // Individual span hover events
       spans.forEach((span) => {
-        // Mouse events (for desktop)
         span.addEventListener('mouseenter', () => {
-          if (!isTouch) {
+          updateLastInteraction();
+          if (isMouseInsideRef.current) {
             span.classList.add('active');
+            activeSpansRef.current.add(span);
           }
         });
 
         span.addEventListener('mouseleave', () => {
-          if (!isTouch) {
+          updateLastInteraction();
+          if (isMouseInsideRef.current) {
             span.classList.remove('active');
+            activeSpansRef.current.delete(span);
           }
         });
-
-        // Touch events (for mobile) - using passive: false to allow preventDefault
-        span.addEventListener(
-          'touchstart',
-          (e) => {
-            isTouch = true;
-            e.preventDefault();
-            e.stopPropagation();
-            span.classList.add('active');
-            currentTouchTarget = span;
-          },
-          { passive: false }
-        );
-
-        span.addEventListener(
-          'touchend',
-          (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            // Delay removal to allow for smooth transitions
-            setTimeout(() => {
-              span.classList.remove('active');
-            }, 100);
-            currentTouchTarget = null;
-          },
-          { passive: false }
-        );
-
-        span.addEventListener(
-          'touchcancel',
-          (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            span.classList.remove('active');
-            currentTouchTarget = null;
-          },
-          { passive: false }
-        );
       });
+    };
 
-      // Handle touch move for drag-to-activate behavior
-      const handleTouchMove = (e: TouchEvent) => {
-        if (e.touches.length > 0) {
-          isTouch = true;
-          e.preventDefault();
+    const startIdleAnimation = () => {
+      const runIdleAnimation = () => {
+        // Only run if mouse is not inside the component
+        if (!isMouseInsideRef.current) {
+          const spans = document.querySelectorAll(
+            '.cube span'
+          ) as NodeListOf<HTMLSpanElement>;
 
-          const touch = e.touches[0];
-          const element = document.elementFromPoint(
-            touch.clientX,
-            touch.clientY
-          );
+          if (spans.length > 0) {
+            // Get visible spans (within reasonable viewport bounds)
+            const visibleSpans = Array.from(spans).filter((span) => {
+              const rect = span.getBoundingClientRect();
+              return (
+                rect.top < window.innerHeight &&
+                rect.bottom > 0 &&
+                rect.left < window.innerWidth &&
+                rect.right > 0
+              );
+            });
 
-          // Try to find the span element more reliably
-          let touchedSpan: HTMLElement | null = null;
-          if (element) {
-            // Check if element is a span or find closest span
-            if (element.tagName === 'SPAN' && element.closest('.cube')) {
-              touchedSpan = element as HTMLElement;
-            } else {
-              touchedSpan =
-                element.querySelector('span') || element.closest('span');
-              // If still not found, check parent elements
-              if (!touchedSpan) {
-                let parent = element.parentElement;
-                while (parent && !touchedSpan) {
-                  touchedSpan = parent.querySelector('span');
-                  if (
-                    !touchedSpan &&
-                    parent.tagName === 'SPAN' &&
-                    parent.closest('.cube')
-                  ) {
-                    touchedSpan = parent;
-                  }
-                  parent = parent.parentElement;
-                }
+            // If no visible spans, fall back to all spans
+            const spansToUse =
+              visibleSpans.length > 0 ? visibleSpans : Array.from(spans);
+
+            // Pick 2-3 random spans
+            const numCubes = Math.floor(Math.random() * 2) + 2; // 2 or 3 cubes
+            const selectedSpans: HTMLElement[] = [];
+
+            for (let i = 0; i < numCubes && i < spansToUse.length; i++) {
+              let randomSpan;
+              do {
+                const randomIndex = Math.floor(
+                  Math.random() * spansToUse.length
+                );
+                randomSpan = spansToUse[randomIndex];
+              } while (
+                selectedSpans.includes(randomSpan) &&
+                selectedSpans.length < spansToUse.length
+              );
+
+              if (!selectedSpans.includes(randomSpan)) {
+                selectedSpans.push(randomSpan);
               }
             }
-          }
 
-          if (touchedSpan && touchedSpan !== currentTouchTarget) {
-            // Remove active from previous target
-            if (currentTouchTarget) {
-              currentTouchTarget.classList.remove('active');
-            }
-            // Add active to new target
-            touchedSpan.classList.add('active');
-            currentTouchTarget = touchedSpan;
+            // Activate spans with staggered timing
+            selectedSpans.forEach((span, index) => {
+              setTimeout(() => {
+                span.classList.add('active');
+
+                // Deactivate after 2 seconds
+                setTimeout(() => {
+                  span.classList.remove('active');
+                }, 2000);
+              }, index * 150); // 150ms stagger between each cube
+            });
           }
         }
+
+        // Schedule next animation
+        idleAnimationRef.current = setTimeout(runIdleAnimation, 1000);
       };
 
-      // Clean up on touch end
-      const handleTouchEnd = (e: TouchEvent) => {
-        e.preventDefault();
-        setTimeout(() => {
-          if (currentTouchTarget) {
-            currentTouchTarget.classList.remove('active');
-            currentTouchTarget = null;
-          }
-          // Reset touch flag after a delay
-          setTimeout(() => {
-            isTouch = false;
-          }, 500);
-        }, 100);
-      };
+      // Start the animation
+      idleAnimationRef.current = setTimeout(runIdleAnimation, 1000);
+    };
 
-      // Reset touch flag on mouse events
-      const handleMouseMove = () => {
-        isTouch = false;
-      };
-
-      document.addEventListener('touchmove', handleTouchMove, {
-        passive: false,
-      });
-      document.addEventListener('touchend', handleTouchEnd, { passive: false });
-      document.addEventListener('mousemove', handleMouseMove);
-
-      // Cleanup function to remove event listeners
-      return () => {
-        document.removeEventListener('touchmove', handleTouchMove);
-        document.removeEventListener('touchend', handleTouchEnd);
-        document.removeEventListener('mousemove', handleMouseMove);
-      };
+    const stopIdleAnimation = () => {
+      if (idleAnimationRef.current) {
+        clearTimeout(idleAnimationRef.current);
+        idleAnimationRef.current = null;
+      }
     };
 
     cubes();
-    const cleanup = addHoverEvent();
 
     // Cleanup on component unmount
-    return cleanup;
+    return () => {
+      stopIdleAnimation();
+      if (inactivityTimeoutRef.current) {
+        clearTimeout(inactivityTimeoutRef.current);
+      }
+      activeSpansSet.clear();
+    };
   }, []); // Empty dependency array means this runs once on mount
 
   return <div ref={containerRef} className='container'></div>;

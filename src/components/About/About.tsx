@@ -103,6 +103,7 @@ const About = () => {
           textAlign='left'
           gap='4px'
           fontWeight='900'
+          color='white'
         >
           <Badge fontSize='16px'>90%</Badge>
           Lower
@@ -130,6 +131,7 @@ const About = () => {
           textAlign='left'
           gap='4px'
           fontWeight='900'
+          color='white'
         >
           <Badge fontSize='20px'>6x</Badge>
           Faster
