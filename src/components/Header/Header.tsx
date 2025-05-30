@@ -49,7 +49,7 @@ const Header = () => {
             platform designed to help{' '}
             <b style={{ color: '#ffffff' }}>enterprises</b> and{' '}
             <b style={{ color: '#ffffff' }}>government agencies</b> anticipate
-            trends, identify new opportunities, and make
+            trends, identify new opportunities, and make{' '}
             <b style={{ color: '#ffffff' }}>data driven innovation</b> decisions
             to <b style={{ color: '#ffffff' }}>reach markets and have impact</b>{' '}
             - faster and more accurately than ever before.
