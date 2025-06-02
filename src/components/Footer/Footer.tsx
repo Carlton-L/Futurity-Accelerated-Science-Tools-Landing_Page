@@ -35,7 +35,7 @@ const Footer = () => {
             <Image src={FuturitySystemsLogo} maxWidth='256px' />
             <Text color='white' textAlign='left' md={{ maxWidth: '820px' }}>
               Pioneering scientific solutions and innovation for Fortune 500
-              companies and givernmental agencies worldwide.
+              companies and governmental agencies worldwide.
             </Text>
           </Flex>
           <Image src={WomenTechEU} maxWidth='265px' alignSelf='center' />
